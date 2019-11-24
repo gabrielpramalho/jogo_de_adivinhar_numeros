@@ -6,7 +6,6 @@ let randomNumber = Math.floor(Math.random() * 10) + 1;
 let open = 0;
 let resetButtom;
 var contador = 0
-console.log(randomNumber);
 function submit(){
 
     if (tent.value == randomNumber && contador < 3){
@@ -18,6 +17,11 @@ function submit(){
         resp.textContent = 'GAME OVER !!!';
         setGameOver();
     }else{
+        if (tent.value > randomNumber){
+            bot.textContent = 'Está muito alto!';
+        }else{
+            bot.textContent = 'Está muito baixo!';
+        }
         contador++;
         resp.textContent = 'Errou!'
         resp.style.backgroundColor = 'rgb(204, 3, 3)';
@@ -30,10 +34,10 @@ function submit(){
         tent.value = '';
         tent.focus();
     }
-    console.log(contador);
 }
 
 function setGameOver(){
+    bot.textContent = '';
     tent.disabled = true;
     resetButtom = document.createElement('button');
     resetButtom.textContent = "Começar novo jogo";
@@ -54,7 +58,5 @@ function resetGame(){
     tent.disabled = false;
     tent.value = '';
     tent.focus();
-
     randomNumber = Math.floor(Math.random() * 10) + 1;
-    console.log(randomNumber);
 }
