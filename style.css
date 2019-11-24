@@ -1,0 +1,15 @@
+body {
+    background: rgba(158, 233, 223, 0.932);
+}
+.corpo{
+    color: white;
+    padding: 10%;
+    width: 50%;
+    height: 50%;
+    border: black 5px;
+    margin: auto;
+    border: 1px solid black;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.212);
+    text-align: center;
+    background: rgb(56, 72, 216);
+}
